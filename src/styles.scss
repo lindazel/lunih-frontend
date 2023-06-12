@@ -23,3 +23,75 @@
 
 // Custom text color
 @import './assets/css/custom-text.scss';
+
+// Custom hide
+@import './assets/css/hide-custom.scss';
+
+// Form field
+@import './assets/css/form-field-css.scss';
+
+// Other custom
+@import './assets/css/other-custom.scss';
+
+// Theme's font
+@import './assets/theme/css/font-face.scss';
+
+//Font size custom
+
+@import './assets/css/font-size-custom.scss';
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+// Scrollbar style common
+::-webkit-scrollbar-track {
+  width: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: #1976d2;
+  background-image: -webkit-linear-gradient(45deg,
+      rgba(255, 255, 255, .2) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, .2) 50%,
+      rgba(255, 255, 255, .2) 75%,
+      transparent 75%,
+      transparent)
+}
+
+// End: Scrollbar style common
+
+// Linh tinh
+.pointer:hover {
+  cursor: pointer;
+}
+
+// END Linh tinh
+
+
+// FORM BIEU MAU
+.brg-form {
+  background-image: url("./assets/img/wave-bg.png");
+}
+
+.form-bg {
+  padding: 10px;
+  background: #ffffff;
+}

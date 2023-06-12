@@ -1,3 +1,7 @@
+.text-primary {
+  color: #003366;
+}
+
 .text-blue {
   color: #007bff;
 }
@@ -32,4 +36,19 @@
 
 .text-bold {
   font-weight: 700;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 200px;
 }

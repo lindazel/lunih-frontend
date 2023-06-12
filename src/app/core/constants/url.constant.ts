@@ -30,6 +30,7 @@ export const UrlConstant = {
         },
         MANAGEMENT: {
             DASHBOARD: '/management/dashboard',
+            CATEGORIES: '/management/categories',
     },
   }
 };

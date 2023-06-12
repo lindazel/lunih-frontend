@@ -17,6 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "date-fns",
+              "jquery"
+            ],
             "outputPath": "dist/lunih-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -32,15 +36,29 @@
                 "glob": "**/*",
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-extended-pdf-viewer/assets/",
+                "output": "/assets/"
               }
             ],
             "styles": [
+              "src/assets/libs/bootstrap/css/bootstrap-grid.min.css",
               "src/theme.less",
-              "src/styles.scss",
-              "./node_modules/ngx-toastr/toastr.css",
-              "./node_modules/@fortawesome/fontawesome-free/css/all.min.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "src/assets/theme/css/color.css",
+              "src/assets/theme/css/transitions.css",
+              "src/assets/theme/css/dashboard.css",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/libs/bootstrap/js/bootstrap.min.js",
+              "src/assets/theme/js/modernizr-2.8.3-respond-1.4.2.min.js",
+              "src/assets/theme/js/main.js"
+            ]
           },
           "configurations": {
             "production": {

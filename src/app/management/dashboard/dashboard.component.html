@@ -1,1 +1,32 @@
-<p>dashboard works!</p>
+<app-breadcrumb [breadcrumb]="breadcrumbObj"></app-breadcrumb>
+
+<div nz-row>
+  <div nz-col nzSpan="12">
+    <span class="text-title">{{breadcrumbObj.heading}}</span>
+  </div>
+  <div nz-col nzSpan="12" class="text-right">
+    <button nz-button class="nz-btn-green"><i class="fas fa-plus mr-right-5"></i>Thêm mới</button>
+  </div>
+</div>
+<hr>
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Address</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of basicTable.data">
+      <td>{{ data.name }}</td>
+      <td>{{ data.age }}</td>
+      <td>{{ data.address }}</td>
+      <td>
+        <a>Action 一 {{ data.name }}</a>
+        <a>Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

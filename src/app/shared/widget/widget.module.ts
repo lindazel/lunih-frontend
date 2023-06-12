@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FieldErrorDisplayComponent } from './field-error-display/field-error-display.component';
 import { PaginateModule } from './paginate/paginate.module';
 import { DirectiveUserModule } from './directives/directive-user.module';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb'; 
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import { DirectiveUserModule } from './directives/directive-user.module';
         RouterModule,
         PaginateModule,
         DirectiveUserModule,
+        NzBreadCrumbModule
     ],
     declarations: [
         BreadCrumbComponent,

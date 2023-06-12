@@ -1,14 +1,31 @@
 .avatar {
-  width: 40px;
-  height: 40px;
-  margin-top: 6px;
+  width: 35px;
+  height: 35px;
+  margin-top: -5px;
   border: solid 1px white;
   border-radius: 50%;
 }
 
-.logo {
-  width: 40px;
-  height: 40px;
+.lang-lv {
+  background-image: url('../../../../assets/img/lv.svg');
+}
+
+.lang-en {
+  background-image: url('../../../../assets/img/en.svg');
+}
+.language-btn {
   margin-right: 10px;
-  transform: translateY(-5px);
+  background-size: 22px;
+  background-position: 5px 1.2px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+.language-btn span {
+  opacity: 0;
+}
+.language-btn span:last-child {
+  opacity: 1;
+  text-transform: uppercase;
 }
