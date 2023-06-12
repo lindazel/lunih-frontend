@@ -8,6 +8,7 @@ import { ManagementFooterComponent } from './management-footer/management-footer
 import { ManagementHeaderComponent } from './management-header/management-header.component';
 import { ManagementLayoutComponent } from './management-layout/management-layout.component';
 import { ManagementSidebarComponent } from './management-sidebar/management-sidebar.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -19,14 +20,10 @@ import { ManagementSidebarComponent } from './management-sidebar/management-side
     imports: [
         CommonModule,
         FormsModule,
-        RouterModule
+        RouterModule,
+        SharedModule
     ],
-    exports: [
-        ManagementLayoutComponent,
-        ManagementHeaderComponent,
-        ManagementFooterComponent
-    ],
-    providers: [
-    ],
+    exports: [],
+    providers: [],
 })
 export class ManagementLayoutModule { }

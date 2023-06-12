@@ -1,1 +1,10 @@
-<p>management-sidebar works!</p>
+<div class="logo text-white text-center logo-text-font">
+  <b>LUNIH</b>
+</div>
+<ul nz-menu nzTheme="dark" nzMode="inline">
+  <li nz-menu-item [routerLink]="['/management']">
+    <i class="fas fa-database mr-right-10"></i>
+    <span nzTooltipPlacement="right" nz-tooltip
+    [nzTooltipTitle]="'Test Tool tip'">Test</span>
+  </li>
+</ul>

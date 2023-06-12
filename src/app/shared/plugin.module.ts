@@ -12,11 +12,19 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzTagModule } from 'ng-zorro-antd/tag';
 import { NzToolTipModule } from 'ng-zorro-antd/tooltip';
 import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzGridModule } from 'ng-zorro-antd/grid'
+import { NzLayoutModule } from 'ng-zorro-antd/layout'
+import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 // Zorro
 const NgZorroAntdModules = [
+  NzGridModule,
+  NzLayoutModule,
+  NzCheckboxModule,
+  NzEmptyModule,
   NzButtonModule,
   NzModalModule,
   NzDropDownModule,
@@ -33,6 +41,11 @@ const NgZorroAntdModules = [
   declarations: [],
   imports: [
     CommonModule,
+    NgZorroAntdModules,
+    NgxSpinnerModule,
+    // CKEditorModule,
+  ],
+  exports: [
     NgZorroAntdModules,
     NgxSpinnerModule,
     // CKEditorModule,
