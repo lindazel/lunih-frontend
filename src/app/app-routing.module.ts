@@ -5,11 +5,11 @@ import { MainLayoutComponent } from './layouts/main/main-layout/main-layout.comp
 const routes: Routes = [
   {
     path: '',
-    component: MainLayoutComponent,
     loadChildren: () => import(`./main/main.module`).then(m => m.MainModule)
   },
   {
     path: 'login',
+    component: MainLayoutComponent,
     loadChildren: () => import(`./auth/auth.module`).then(m => m.AuthModule)
   },
   {

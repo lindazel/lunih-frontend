@@ -1,0 +1,27 @@
+.login-on-page {
+  display: flex;
+  justify-content: center;
+}
+.center-form {
+  width: 100%;
+  max-width: 450px;
+}
+::ng-deep .ant-form-item {
+  margin-bottom: 15px;
+}
+.nz-form-input {
+  height: 35px;
+  font-size: 15px
+}
+.prefix-icon {
+  margin-top: 5px;
+  margin-right: 5px;
+  font-size: 16px;
+}
+.append-icon {
+  margin-top: 5px;
+  font-size: 16px;
+}
+.ant-divider-horizontal.ant-divider-with-text::before, .ant-divider-horizontal.ant-divider-with-text::after {
+  transform: unset;
+}

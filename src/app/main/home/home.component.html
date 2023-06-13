@@ -1,1 +1,163 @@
-<p>home works!</p>
+<main id="sj-main" class="sj-main sj-haslayout sj-sectionspace">
+  <div class="sj-haslayout top-bgr">
+    <div class="container welcome-container">
+      <div class="row">
+        <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 sj-verticalmiddle">
+          <div class="banner-link-layer" [ngStyle]="autoResizeBanner"></div>
+          <nz-carousel [nzEffect]="'scrollx'" nzAutoPlay [nzEnableSwipe]='false' [nzAutoPlaySpeed]="5000"
+          [ngStyle]="autoResizeBanner">
+            <div nz-carousel-content *ngFor="let index of [1,2,3,4]">
+              <img src="assets/img/test_banner.jpg" class="w-100" #imgSlider
+            onerror="this.src='assets/img/iglslogo.png'">
+            </div>
+          </nz-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sj-twocolumns" class="sj-twocolumns">
+    <div class="container">
+      <div class="row">
+        <!--************************************
+            Left panel
+        *************************************-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-8 col-lg-9">
+          <div id="sj-content" class="sj-content">
+
+            <!-- Search -->
+            <div class="sj-widgetcontent show-search-mobile">
+              <nz-input-group nzSearch [nzAddOnAfter]="suffixSearchButtonMobile">
+                <input type="text" nz-input class="search-input" [placeholder]="langData[langCode]['SEARCH']"/>
+              </nz-input-group>
+              <ng-template #suffixSearchButtonMobile>
+                <button nz-button nzType="primary" nzSize="large" type="button" nzSearch><i
+                    class="fas fa-search"></i></button>
+              </ng-template>
+            </div>
+
+            <!-- Announcement -->
+            <section class="sj-haslayout sj-sectioninnerspace">
+              <div class="sj-borderheading format-title">
+                <span class="category-title">{{ langData[langCode]['ANNOUNCEMENT'] }}</span>
+                <a class="sj-btnview" href="../announcement">
+                  <span>{{ langData[langCode]['MORE'] }}</span>
+                  <i class="fas fa-chevron-circle-right mr-left-5 chevron"></i>
+                </a>
+              </div>
+              <div class="sj-content">
+                <div class="row">
+                  <div class="split-item">
+                    <!-- <app-post-tpl></app-post-tpl>
+                    <app-post-tpl></app-post-tpl>
+                    <app-post-tpl></app-post-tpl> -->
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+        <!--************************************
+              Left panel End
+          *************************************-->
+
+
+        <!--************************************
+            Right panel
+        *************************************-->
+        <div class="col-12 col-xs-12 col-sm-12 col-md-4 col-lg-3">
+          <aside id="sj-sidebar" class="sj-sidebar">
+            <div class="sj-widget hide-search-pc">
+              <div class="sj-widgetcontent">
+                <nz-input-group nzSearch [nzAddOnAfter]="suffixSearchButton">
+                  <input type="text" nz-input class="search-input" [placeholder]="langData[langCode]['SEARCH']"
+                    [(ngModel)]="valueSearch" />
+                </nz-input-group>
+                <ng-template #suffixSearchButton>
+                  <button nz-button nzType="primary" nzSize="large" type="button" nzSearch>
+                    <i class="fas fa-search"></i></button>
+                </ng-template>
+              </div>
+            </div>
+
+            <!-- Categories  -->
+            <div class="sj-widget box-right-clm">
+              <div class="sj-borderheading format-title">
+                <b><u class="title-category">{{ langData[langCode]['CATEGORIES'] }}</u></b>
+              </div>
+              <div class="sj-content">
+                <div class="category-item">
+                  <i class="fas fa-angle-right mr-right-5"></i>{{ langData[langCode]['ANNOUNCEMENT'] }}
+                </div>
+                <div class="category-item">
+                  <i class="fas fa-angle-right mr-right-5"></i>{{ langData[langCode]['JOB_TOPIC'] }}
+                </div>
+                <div class="category-item">
+                  <i class="fas fa-angle-right mr-right-5"></i>{{ langData[langCode]['THESIS_TOPIC'] }}
+                </div>
+                <div class="category-item">
+                  <i class="fas fa-angle-right mr-right-5"></i>{{ langData[langCode]['ABOUT_US'] }}
+                </div>
+                <div class="category-item">
+                  <i class="fas fa-angle-right mr-right-5"></i>{{ langData[langCode]['CONTACT_US'] }}
+                </div>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+        <!--************************************
+            Right panel End
+        *************************************-->
+      </div>
+
+      <!--************************************
+            Block 3
+        *************************************-->
+      <!-- Thesis Topics -->
+      <div class="sj-main sj-haslayout sj-sectionspace">
+        <div class="sj-borderheading format-title">
+          <span class="category-title">{{ langData[langCode]['THESIS_TOPIC'] }}</span>
+          <a class="sj-btnview" href="javascript:void(0);" href="../thesis">
+            <span>{{ langData[langCode]['MORE'] }}</span>
+            <i class="fas fa-chevron-circle-right mr-left-5 chevron"></i>
+          </a>
+        </div>
+        <div class="sj-content">
+          <!-- <app-post-tpl-wide></app-post-tpl-wide>
+          <app-post-tpl-wide></app-post-tpl-wide>
+          <app-post-tpl-wide></app-post-tpl-wide> -->
+        </div>
+
+      </div>
+      <!--************************************
+            Block 3 end
+        *************************************-->
+
+      <!--************************************
+            Block 4
+        *************************************-->
+        <!-- JOB OFFERS -->
+      <div class="sj-main sj-haslayout sj-sectionspace">
+        <div class="sj-borderheading format-title" [routerLink]="'/job'">
+          <span class="category-title">{{ langData[langCode]['JOB_TOPIC'] }}</span>
+          <a class="sj-btnview" href="javascript:void(0);">
+            <span>{{ langData[langCode]['MORE'] }}</span>
+            <i class="fas fa-chevron-circle-right mr-left-5 chevron"></i>
+          </a>
+        </div>
+        <div class="sj-content">
+          <!-- <app-post-tpl-wide></app-post-tpl-wide>
+          <app-post-tpl-wide></app-post-tpl-wide>
+          <app-post-tpl-wide></app-post-tpl-wide> -->
+        </div>
+
+      </div>
+      <!--************************************
+            Block 4 end
+        *************************************-->
+
+    </div>
+  </div>
+</main>

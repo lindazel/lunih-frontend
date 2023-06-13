@@ -16,11 +16,18 @@ import { NzGridModule } from 'ng-zorro-antd/grid'
 import { NzLayoutModule } from 'ng-zorro-antd/layout'
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzEmptyModule } from 'ng-zorro-antd/empty';
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
+// import { } from 'ng-zorro-antd/';
 // import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 // Zorro
 const NgZorroAntdModules = [
+  NzFormModule,
+  NzDividerModule,
+  NzCarouselModule,
   NzGridModule,
   NzLayoutModule,
   NzCheckboxModule,
