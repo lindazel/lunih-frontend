@@ -24,6 +24,11 @@ const routes: Routes = [
     path: 'categories',
     component: ManagementLayoutComponent,
     loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
+  },
+  {
+    path: 'users',
+    component: ManagementLayoutComponent,
+    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
   }
 ];
 

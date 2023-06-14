@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UrlConstant } from 'src/app/core/constants/url.constant';
+import { LanguageConstant } from 'src/app/core/constants/language.constant';
 import { BreadCrumb } from 'src/app/core/models/common/breadcrumb.model';
 
 @Component({
@@ -9,33 +9,14 @@ import { BreadCrumb } from 'src/app/core/models/common/breadcrumb.model';
 })
 export class DashboardComponent {
 
+  // LANGUAGE
+  langData: Record<string, Record<string, string>> = LanguageConstant;
+  langCode = localStorage.getItem('language') ?? 'en';
+
   breadcrumbObj: BreadCrumb = new BreadCrumb({
-    heading: 'Diện xét tuyển',
-    listBreadcrumb: [{
-      title: 'Danh Mục',
-      link: UrlConstant.ROUTE.MANAGEMENT.CATEGORIES
-    }]
+    heading: this.langData[this.langCode]['DASHBOARD']
   });
 
-  listOfData: any[] = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park'
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park'
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park'
-    }
-  ];
+  
 
 }

@@ -49,7 +49,6 @@ export const LanguageConstant = {
     OR: 'Or',
 
     NO: 'No',
-    FACULTY_NAME: 'Faculty Name',
     STATUS: 'Status',
     ACTIVE: 'Active',
     INACTIVE: 'Inactive',
@@ -61,8 +60,11 @@ export const LanguageConstant = {
     ITEM: 'item(s)',
 
     //Faculty
+    FACULTY_NAME: 'Faculty Name',
     FACULTY_NAME_EN: 'Faculty English Name',
     FACULTY_NAME_LV: 'Faculty Latvian Name',
+
+
 
     //Homepage
     SEARCH: 'Search...',
@@ -80,6 +82,7 @@ export const LanguageConstant = {
     STUDENT: 'Student',
     UNIVERSITY: 'University',
     COMPANY: 'Company',
+    ADMIN: 'Administrator',
 
     //Footer
     INFO_1: 'Latvia University Ideas Hub',
@@ -92,11 +95,20 @@ export const LanguageConstant = {
 
     PHONE_NUM: '(+371) 2345 6789',
     EMAIL: 'contact@lunih.lv',
-    DESIGN_COST: 'Designed & Developed by COST - HCMUTE',
+    DESIGN_COST: 'Developed by lunih - Liepaja University',
 
     //Categories
     DASHBOARD: 'Dashboard',
     FACULTY: 'Faculty',
+    PROGRAM: 'Program',
+    INDUSTRY: 'Industry',
+    POST_TYPE: 'Post Type',
+    USER_ACCOUNT: 'Users & Account',
+    POST_MANAGEMENT: 'Post Management',
+    POST: 'Post',
+
+    //User_account
+
   },
 
   lv: {
@@ -116,6 +128,11 @@ export const LanguageConstant = {
     //Authentication
     USER_INFO: 'User Information lv',
     LOG_IN: 'Log In lv',
-    LOG_OUT: 'Izlogoties'
+    LOG_OUT: 'Izlogoties',
+
+    //Faculty
+    FACULTY_NAME: 'Faculty Name LV',
+    FACULTY_NAME_EN: 'Faculty English Name LV',
+    FACULTY_NAME_LV: 'Faculty Latvian Name LV',
   }
 };

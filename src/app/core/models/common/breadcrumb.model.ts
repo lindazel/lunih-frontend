@@ -1,9 +1,9 @@
 export class BreadCrumb {
   heading: string;
-  listBreadcrumb: BreadcrubmObj[];
+  listBreadcrumb?: BreadcrubmObj[];
   constructor(initObj: {
     heading: string;
-    listBreadcrumb: BreadcrubmObj[];
+    listBreadcrumb?: BreadcrubmObj[];
   }) {
     this.heading = initObj.heading;
     this.listBreadcrumb = initObj.listBreadcrumb;

@@ -29,6 +29,7 @@ export class ManagementSidebarComponent implements OnInit {
 
   ngOnInit(): void {
     this.listMenu = [
+      //dashboard
       {
         icon: 'fas fa-solar-panel',
         title: this.langData[this.langCode]['DASHBOARD'],
@@ -36,6 +37,8 @@ export class ManagementSidebarComponent implements OnInit {
         isHaveChild: false,
         listChild: []
       },
+
+      //categories
       {
         icon: 'pic-left',
         title: this.langData[this.langCode]['CATEGORIES'],
@@ -47,8 +50,69 @@ export class ManagementSidebarComponent implements OnInit {
             title: this.langData[this.langCode]['FACULTY'],
             routerLink: UrlConstant.ROUTE.MANAGEMENT.FACULTY
           },
+          {
+            icon: '',
+            title: this.langData[this.langCode]['PROGRAM'],
+            routerLink: UrlConstant.ROUTE.MANAGEMENT.PROGRAM
+          },
+          {
+            icon: '',
+            title: this.langData[this.langCode]['INDUSTRY'],
+            routerLink: UrlConstant.ROUTE.MANAGEMENT.INDUSTRY
+          },
+          {
+            icon: '',
+            title: this.langData[this.langCode]['POST_TYPE'],
+            routerLink: UrlConstant.ROUTE.MANAGEMENT.POST_TYPE
+          },
         ]
       },
+
+      //user_account
+      {
+        icon: '',
+        title: this.langData[this.langCode]['USER_ACCOUNT'],
+        routerLink: '',
+        isHaveChild: true,
+        listChild: [
+          {
+            icon: '',
+            title: this.langData[this.langCode]['STUDENT'],
+            routerLink: UrlConstant.ROUTE.MANAGEMENT.STUDENT
+          },
+          {
+            icon: '',
+            title: this.langData[this.langCode]['UNIVERSITY'],
+            routerLink: UrlConstant.ROUTE.MANAGEMENT.UNIVERSITY
+          },
+          {
+            icon: '',
+            title: this.langData[this.langCode]['COMPANY'],
+            routerLink: UrlConstant.ROUTE.MANAGEMENT.COMPANY
+          },
+          {
+            icon: '',
+            title: this.langData[this.langCode]['ADMIN'],
+            routerLink: UrlConstant.ROUTE.MANAGEMENT.ADMIN
+          },
+        ]
+      },
+
+      //post_management
+      {
+        icon: '',
+        title: this.langData[this.langCode]['POST_MANAGEMENT'],
+        routerLink: '',
+        isHaveChild: true,
+        listChild: [
+          {
+            icon: '',
+            title: this.langData[this.langCode]['POST'],
+            routerLink: UrlConstant.ROUTE.MANAGEMENT.POST_MANAGEMENT,
+          }
+        ]
+      }
+      
     ]
     
   }

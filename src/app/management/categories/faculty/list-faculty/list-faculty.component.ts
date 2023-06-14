@@ -89,7 +89,6 @@ export class ListFacultyComponent implements OnInit {
   }
 
   pageChange(page: Paginate<Faculty>) {
-    console.log('pagechanged', page);
     this.listFaculty = page;
     this.getDataPaging();
   }
