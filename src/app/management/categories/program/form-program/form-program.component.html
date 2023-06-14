@@ -1,1 +1,85 @@
-<p>form-program works!</p>
+<form [formGroup]="form" (keydown.enter)="$event.preventDefault()">
+
+  <div nz-row class="pad-bot-form">
+    <div nz-col nzSpan="24">
+      <label>{{langData[langCode]['PROGRAM_NAME_EN']}}</label><label class="field-required">*</label>
+    </div>
+    <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'nameEn')">
+      <input nz-input formControlName="nameEn">
+      <app-field-error-display [displayError]="isFieldValid(form, 'nameEn')"
+        [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="pad-bot-form">
+    <div nz-col nzSpan="24">
+      <label>{{langData[langCode]['PROGRAM_NAME_LV']}}</label><label class="field-required">*</label>
+    </div>
+    <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'nameLv')">
+      <input nz-input formControlName="nameLv">
+      <app-field-error-display [displayError]="isFieldValid(form, 'nameLv')"
+        [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="pad-bot-form">
+    <div nz-col nzSpan="24">
+      <label>{{langData[langCode]['STUDY_LEVEL']}}</label><label class="field-required">*</label>
+    </div>
+    <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'studyLevel')">
+      <nz-select class="w-100" formControlName="studyLevel" [nzPlaceHolder]="langData[langCode]['CHOOSE_STUDY_LEVEL']">
+        <nz-option [nzLabel]="langData[langCode]['BACHELOR']" [nzValue]="'LEVEL_BACHELOR'"></nz-option>
+        <nz-option [nzLabel]="langData[langCode]['MASTER']" [nzValue]="'LEVEL_MASTER'"></nz-option>
+        <nz-option [nzLabel]="langData[langCode]['DOCTORAL']" [nzValue]="'LEVEL_DOCTORAL'"></nz-option>
+      </nz-select>
+      <app-field-error-display [displayError]="isFieldValid(form, 'studyLevel')"
+        [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="pad-bot-form">
+    <div nz-col nzSpan="24">
+      <label>{{langData[langCode]['FACULTY']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+    </div>
+    <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'facultyID')">
+      <nz-select class="w-100" nzShowSearch [nzPlaceHolder]="langData[langCode]['CHOOSE_FACULTY']" formControlName="facultyID">
+        <nz-option *ngFor="let faculty of listFaculty" [nzLabel]="langCode === 'en' ? faculty.nameEn : faculty.nameLv" [nzValue]="faculty.id">
+        </nz-option>
+      </nz-select>
+      <app-field-error-display [displayError]="isFieldValid(form, 'facultyID')"
+        [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="pad-bot-form">
+    <div nz-col nzSpan="24">
+      <label>{{langData[langCode]['INDUSTRY']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+    </div>
+    <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'industryList')">
+      <nz-select class="w-100" nzShowSearch nzServerSearch (nzOnSearch)="searchIndustryValueChanged.next($any($event))" nzMode="multiple" [nzPlaceHolder]="langData[langCode]['CHOOSE_INDUSTRY']" formControlName="industryList">
+        <nz-option *ngFor="let industry of listIndustry.data" [nzLabel]="langCode === 'en' ? industry.nameEn : industry.nameLv" [nzValue]="industry.id">
+        </nz-option>
+      </nz-select>
+      <app-field-error-display [displayError]="isFieldValid(form, 'industryList')"
+        [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="ant-modal-footer fk-modal-footer">
+    <div nz-col nzSpan="24" class="ali-right">
+      <div class="pad-left-form-control" style="display: inline-block;">
+        <button nz-button nzType="default" nzSize="default" type="button" class="nz-btn-red" (click)="onCancel()"><i
+            class="fas fa-times mr-right-5"></i>{{langData[langCode]['CANCEL']}}</button>
+      </div>
+      <div class="pad-left-form-control" style="display: inline-block;">
+        <button nz-button nzType="primary" nzSize="default" type="button" (click)="onSubmit()"><i
+            class="fas fa-save mr-right-5"></i>{{langData[langCode]['SAVE']}}</button>
+      </div>
+    </div>
+  </div>
+</form>

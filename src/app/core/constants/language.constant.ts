@@ -1,5 +1,6 @@
 export const LanguageConstant = {
   en: {
+
     HOMEPAGE: 'Homepage',
     ADMIN_SYSTEM: 'Administration system',
 
@@ -27,6 +28,10 @@ export const LanguageConstant = {
     CONFIRM_CHANGE_STATUS: 'Are you sure to CHANGE STATUS this record?',
     CAN_NOT_BE_EMPTY:'This field can not be empty!',
 
+    //Study level
+    BACHELOR: 'Bachelor',
+    MASTER: 'Master',
+    DOCTORAL: 'Doctoral',
 
     //Authentication
     USER_INFO: 'User Information',
