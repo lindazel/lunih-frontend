@@ -20,6 +20,6 @@ export class UserGoogle {
 }
 
 export class LoginFormModel {
-  username!: string;
+  email!: string;
   password!: string;
 }

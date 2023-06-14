@@ -14,23 +14,23 @@ export const UrlConstant = {
     { regex: '.*file.*', method: 'GET' },
   ],
   
-    API: {
-      // Main
-      LOGIN: environment.serverUrl + 'rest/login',
+  API: {
+    // Main
+    LOGIN: environment.serverUrl + 'rest/login',
 
-      // Catalog
-      AAAAA: environment.serverUrl + 'rest/aaaaa',
+    // Categories
+    FACULTY: environment.serverUrl + 'rest/faculty',
+  },
+  ROUTE: {
+      LOGIN: '/login',
+      MAIN: {
+          HOME: '/',
+      },
+      MANAGEMENT: {
+          DASHBOARD: '/management/dashboard',
+          CATEGORIES: '/management/categories',
+          FACULTY: '/management/categories/faculty',
 
-    },
-
-    ROUTE: {
-        LOGIN: '/login',
-        MAIN: {
-            HOME: '/home',
-        },
-        MANAGEMENT: {
-            DASHBOARD: '/management/dashboard',
-            CATEGORIES: '/management/categories',
-    },
+  },
   }
 };

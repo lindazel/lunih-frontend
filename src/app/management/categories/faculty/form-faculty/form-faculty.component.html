@@ -1,0 +1,39 @@
+<form [formGroup]="form" (keydown.enter)="$event.preventDefault()">
+
+  <div nz-row class="pad-bot-form">
+    <div nz-col nzSpan="24">
+      <label>{{langData[langCode]['FACULTY_NAME_EN']}}</label><label class="field-required">*</label>
+    </div>
+    <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'nameEn')">
+      <input nz-input formControlName="nameEn">
+      <app-field-error-display [displayError]="isFieldValid(form, 'nameEn')"
+        [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="pad-bot-form">
+    <div nz-col nzSpan="24">
+      <label>{{langData[langCode]['FACULTY_NAME_LV']}}</label><label class="field-required">*</label>
+    </div>
+    <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'nameLv')">
+      <input nz-input formControlName="nameLv">
+      <app-field-error-display [displayError]="isFieldValid(form, 'nameLv')"
+        [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+      </app-field-error-display>
+    </div>
+  </div>
+
+  <div nz-row class="ant-modal-footer fk-modal-footer">
+    <div nz-col nzSpan="24" class="ali-right">
+      <div class="pad-left-form-control" style="display: inline-block;">
+        <button nz-button nzType="default" nzSize="default" type="button" class="nz-btn-red" (click)="onCancel()"><i
+            class="fas fa-times mr-right-5"></i>{{langData[langCode]['CANCEL']}}</button>
+      </div>
+      <div class="pad-left-form-control" style="display: inline-block;">
+        <button nz-button nzType="primary" nzSize="default" type="button" (click)="onSubmit()"><i
+            class="fas fa-save mr-right-5"></i>{{langData[langCode]['SAVE']}}</button>
+      </div>
+    </div>
+  </div>
+</form>

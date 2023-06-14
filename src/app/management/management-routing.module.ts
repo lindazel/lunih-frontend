@@ -16,8 +16,14 @@ const routes: Routes = [
       {
         path: '',
         component: DashboardComponent
-      }
+      },
+
     ]
+  },
+  {
+    path: 'categories',
+    component: ManagementLayoutComponent,
+    loadChildren: () => import('./categories/categories.module').then(m => m.CategoriesModule)
   }
 ];
 

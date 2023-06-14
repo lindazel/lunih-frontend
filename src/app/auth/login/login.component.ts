@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { LanguageConstant } from 'src/app/core/constants/language.constant';
+import { UrlConstant } from 'src/app/core/constants/url.constant';
+import { AuthenticateService } from 'src/app/core/services/auth/authenticate.service';
 import { FormValidatorService } from 'src/app/core/services/common/form-validator.service';
 
 @Component({
@@ -19,7 +22,9 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private formValidatorService: FormValidatorService
+    private formValidatorService: FormValidatorService,
+    private authService: AuthenticateService,
+    private router: Router,
     ) { }
 
   ngOnInit(): void {
@@ -28,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   createFormGroupLogin(): void {
     this.form = this.fb.group({
-      username: ['', [Validators.required]],
+      email: ['', [Validators.required]],
       password: ['', [Validators.required]],
       remember: [true]
     });
@@ -41,7 +46,21 @@ export class LoginComponent implements OnInit {
     this.showPassLogin = !this.showPassLogin;
   }
 
-  onLoginWithForm() { }
+  onLoginWithForm() {
+    if (this.form.valid) {
+      this.authService.doLoginForm(this.form.value)
+      .subscribe(res => {
+        this.authService.setAuthData(res);
+        if (this.authService.checkRoleAdmin()) {
+          this.router.navigateByUrl(UrlConstant.ROUTE.MANAGEMENT.DASHBOARD);
+        } else {
+          this.router.navigateByUrl(UrlConstant.ROUTE.MAIN.HOME);
+        }
+      })
+    } else {
+      this.formValidatorService.validateAllFormFields(this.form);
+    }
+   }
 
   onLoginWithGoogle() { }
 

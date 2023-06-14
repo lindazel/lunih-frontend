@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Paginate } from './paginate.model';
+import { LanguageConstant } from 'src/app/core/constants/language.constant';
 
 @Component({
   selector: 'table-paginate',
@@ -7,12 +8,17 @@ import { Paginate } from './paginate.model';
   styleUrls: ['./paginate.component.scss']
 })
 export class TablePaginateComponent implements OnInit {
-  @Input() pageConfig!: Paginate;
-  @Output() pageChange: EventEmitter<Paginate> = new EventEmitter<Paginate>();
-  @Output() numOfItemChange: EventEmitter<Paginate> = new EventEmitter<Paginate>();
-  constructor() { }
+  @Input() pageConfig!: Paginate<any>;
+  @Output() pageChange: EventEmitter<Paginate<any>> = new EventEmitter<Paginate<any>>();
+  // @Output() numOfItemChange: EventEmitter<Paginate<any>> = new EventEmitter<Paginate<any>>();
+  
+  // LANGUAGE
+  langData: Record<string, Record<string, string>> = LanguageConstant;
+  langCode = localStorage.getItem('language') ?? 'en';
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    console.log('page', this.pageConfig)
+  }
 
   setPage(page: number): void {
     if (page > 0 && page <= this.pageConfig.totalPage! && page !== this.pageConfig.currentPage) {
@@ -21,8 +27,7 @@ export class TablePaginateComponent implements OnInit {
     }
   }
 
-  changedPage(event: Event): void {
-    const page: number = +(event.target as HTMLInputElement).value;
+  changedPage(page: number): void {
     if (page - 1 > 0 && page - 1 < this.pageConfig.totalPage!) {
       this.pageConfig.currentPage = page;
       this.refreshPage();
@@ -32,8 +37,7 @@ export class TablePaginateComponent implements OnInit {
     }
   }
 
-  changedNumOfItem(event: Event): void {
-    const numOfItem = (event.target as HTMLInputElement).value;
+  changedNumOfItem(numOfItem: string): void {
     this.pageConfig.limit = Number.parseInt(numOfItem, 10);
     this.pageConfig.currentPage = 1;
     this.refreshPage();

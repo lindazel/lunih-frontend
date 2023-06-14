@@ -7,11 +7,26 @@ export const LanguageConstant = {
     ADD: 'Add',
     EDIT: 'Edit',
     DELETE: 'Delete',
+    CONFIRM: 'Confirm',
+    CANCEL: 'Cancel',
+    SAVE: 'Save',
+
+    //Modal
+    EDIT_TITLE: 'Edit Form ',
+    ADD_TITLE: 'Create Form ',
     
-    //Error System
+    //System
     ERR_SYSTEM: 'Something went wrong.',
     ERR_CONNECT_SERVER: 'Unable to connect to server!',
     ACCOUNT_WITHOUT_PRIVILEDGE: 'You do not have access right',
+
+    MSG_UPDATE_DONE: 'Updated successfully!',
+    MSG_CREATE_DONE: 'Created successfully!',
+    MSG_CHANGE_DONE: 'Changed successfully!',
+    CONFIRM_DELETE: 'Are you sure to DELETE this record?',
+    CONFIRM_CHANGE_STATUS: 'Are you sure to CHANGE STATUS this record?',
+    CAN_NOT_BE_EMPTY:'This field can not be empty!',
+
 
     //Authentication
     USER_INFO: 'User Information',
@@ -32,6 +47,22 @@ export const LanguageConstant = {
     LOG_OUT: 'Log Out',
 
     OR: 'Or',
+
+    NO: 'No',
+    FACULTY_NAME: 'Faculty Name',
+    STATUS: 'Status',
+    ACTIVE: 'Active',
+    INACTIVE: 'Inactive',
+    
+    //Paginate
+    NUMBER_LIST: 'Number of item(s)',
+    PAGE: 'page',
+    TOTAL: 'Total',
+    ITEM: 'item(s)',
+
+    //Faculty
+    FACULTY_NAME_EN: 'Faculty English Name',
+    FACULTY_NAME_LV: 'Faculty Latvian Name',
 
     //Homepage
     SEARCH: 'Search...',
@@ -62,6 +93,10 @@ export const LanguageConstant = {
     PHONE_NUM: '(+371) 2345 6789',
     EMAIL: 'contact@lunih.lv',
     DESIGN_COST: 'Designed & Developed by COST - HCMUTE',
+
+    //Categories
+    DASHBOARD: 'Dashboard',
+    FACULTY: 'Faculty',
   },
 
   lv: {

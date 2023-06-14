@@ -4,25 +4,25 @@
     <!-- Toolbar here -->
   </div>
   <div class="sj-manageallsession login-on-page">
-    <form nz-form [formGroup]="form" (ngSubmit)="onLoginWithForm()" class="center-form">
+    <form nz-form [formGroup]="form" class="center-form">
       
-      <!-- Username -->
+      <!-- email -->
       <nz-form-item>
         <nz-form-control>
           <nz-input-group 
           [nzPrefix]="userIcon" 
-          [ngClass]="displayFieldCss(form, 'username')"
+          [ngClass]="displayFieldCss(form, 'email')"
           [nzTooltipTitle]="langData[langCode]['USER_NAME_TIP']" 
           nzTooltipPlacement="left" 
           nz-tooltip>
-            <input type="text" class="nz-form-input" nz-input formControlName="username" nzSize="large"
+            <input type="text" class="nz-form-input" nz-input formControlName="email" nzSize="large"
               [attr.placeholder]="langData[langCode]['USER_NAME']" (keyup.enter)="onLoginWithForm()"/>
             <ng-template #userIcon>
               <i class="fas fa-user prefix-icon"></i>
             </ng-template>
           </nz-input-group>
-          <ng-container *ngIf="isFieldValid(form, 'username')">
-            <small *ngIf="form.get('username')?.errors?.['required']" class="text-red">
+          <ng-container *ngIf="isFieldValid(form, 'email')">
+            <small *ngIf="form.get('email')?.errors?.['required']" class="text-red">
               {{ langData[langCode]['USER_NAME_ERR'] }} <br />
             </small>
           </ng-container>

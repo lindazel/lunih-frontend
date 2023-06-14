@@ -9,7 +9,7 @@
   <button *ngIf="langCode === 'en'" nz-button nzType="default" type="button" nzSize="small"
     class="language-btn lang-en" (click)="switchLang('lv')"
     nzPopconfirmPlacement="bottomRight"><span>........</span><span>{{langCode}}</span></button>
-  <img src="assets/img/user-img.png" onerror="this.src='assets/img/user-img.png'" class="avatar pointer" nz-dropdown [nzDropdownMenu]="menuUser">
+  <img src="../../../../assets/img/user-img.png" onerror="this.src='assets/img/user-img.png'" class="avatar pointer" nz-dropdown [nzDropdownMenu]="menuUser">
   <nz-dropdown-menu #menuUser="nzDropdownMenu">
     <ul nz-menu>
       <li nz-menu-item [routerLink]="['/profile']"><i class="fas fa-user mr-right-5"></i>{{ langData[langCode]['USER_INFO'] }}</li>
