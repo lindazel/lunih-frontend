@@ -29,7 +29,12 @@ const routes: Routes = [
     path: 'users',
     component: ManagementLayoutComponent,
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
-  }
+  },
+  {
+    path: 'posts',
+    component: ManagementLayoutComponent,
+    loadChildren: () => import('./posts/posts.module').then(m => m.PostModule)
+  },
 ];
 
 @NgModule({

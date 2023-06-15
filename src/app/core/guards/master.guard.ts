@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable, Injector } from '@angular/core';
 import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Data, Router }
   from '@angular/router';
@@ -17,10 +16,9 @@ export class MasterGuard implements CanActivate, CanActivateChild {
   private relation: 'OR' | 'AND' = 'OR';
   private fallbackUrl = '';
 
-  // Ngon ngu hien thi //////////
-  private langData = LanguageConstant;
-  private langCode = localStorage.getItem('language') ?? 'en';
-  //////////////////////////////
+  // LANGUAGE
+  langData: Record<string, Record<string, string>> = LanguageConstant;
+  langCode = localStorage.getItem('language') ?? 'en';
 
   constructor(
     private injectorSvc: Injector,
@@ -35,11 +33,7 @@ export class MasterGuard implements CanActivate, CanActivateChild {
       if (!finalResult) {
         const langCode = localStorage.getItem('language') ?? 'vi';
         setTimeout(() => {
-          if (this.langCode === 'en') {
-            this.alert.error(this.langData['en'].ACCOUNT_WITHOUT_PRIVILEDGE);
-          } else {
-            this.alert.error(this.langData['lv'].ACCOUNT_WITHOUT_PRIVILEDGE);
-          }
+          this.alert.error(this.langData[this.langCode]['ACCOUNT_WITHOUT_PRIVILEDGE']);
           localStorage.clear();
         }, 100);
         setTimeout(() => {
@@ -126,7 +120,6 @@ export class MasterGuard implements CanActivate, CanActivateChild {
   private activateGuard(token: any): Promise<boolean> {
     const guard = this.injectorSvc.get<any>(token);
 
-    // eslint-disable-next-line @typescript-eslint/init-declarations
     let result: Observable<boolean> | Promise<boolean> | boolean;
     switch (this.executor) {
       case 'canActivate':

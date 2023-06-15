@@ -121,14 +121,12 @@ export class ListProgramComponent implements OnInit {
       nzOnOk: () => {
         this.spinner.show();
         this.programService.delete(id)
-        .subscribe((res) => {
-          console.log('ss', res);
+        .subscribe(() => {
           this.alert.success(this.langData[this.langCode]['MSG_CHANGE_DONE']);
           this.closeModal(true);
           this.spinner.hide();
         },
-        (err) => {
-          console.log('err', err);
+        () => {
           this.spinner.hide()
         });
       }

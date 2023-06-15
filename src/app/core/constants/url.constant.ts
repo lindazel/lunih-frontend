@@ -7,9 +7,9 @@ export const UrlConstant = {
     { regex: '.*banner/[a-fA-f0-9]{24}', method: 'GET' }, // banner/{id}
     { regex: '.*side-banner$', method: 'GET' },
     { regex: '.*side-banner/[a-fA-f0-9]{24}', method: 'GET' }, // banner/{id}
-    { regex: '.*bai-viet/paging', method: 'GET' },
-    { regex: '.*bai-viet/loai-bai-viet', method: 'GET' },
-    { regex: '.*bai-viet/[a-fA-f0-9]{24}', method: 'GET' }, // bai-viet/{id}
+    { regex: '.*post/paging', method: 'GET' },
+    { regex: '.*post-type', method: 'GET' },
+    { regex: '.*post/[a-fA-f0-9]{24}', method: 'GET' }, // post/{id}
     { regex: '.*file.*', method: 'GET' },
   ],
 
@@ -28,10 +28,13 @@ export const UrlConstant = {
     UNIVERSITY: environment.serverUrl + 'rest/university',
     COMPANY: environment.serverUrl + 'rest/company',
     ADMIN: environment.serverUrl + 'rest/admin',
+    ACCOUNT: environment.serverUrl + 'rest/account',
 
     // Post
     POST: environment.serverUrl + 'rest/post',
+    DELIVERABLE: environment.serverUrl + 'rest/deliverable'
   },
+
   ROUTE: {
     LOGIN: '/login',
     MAIN: {

@@ -50,9 +50,8 @@ export class FormProgramComponent implements OnInit {
     this.searchIndustryValueChanged.pipe(debounceTime(300))
     .subscribe(searchValue => {
       this.getDataIndustry(searchValue);
-    })
+    });
     if (this.modalData.action === SystemConstant.ACTION.EDIT) {
-      console.log(this.modalData);
       this.listIndustry.data = [...this.modalData.data?.industryList!];
       this.form.patchValue({
         nameEn: this.modalData.data?.nameEn,

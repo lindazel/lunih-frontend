@@ -14,10 +14,9 @@ import { ResponseErrorData } from '../../models/common/response-error.model';
 })
 export class HandlerErrorService {
 
-  // Ngon ngu hien thi //////////
-  langData = LanguageConstant;
+  // LANGUAGE
+  langData: Record<string, Record<string, string>> = LanguageConstant;
   langCode = localStorage.getItem('language') ?? 'en';
-  //////////////////////////////
 
   routerNext = '';
 
@@ -29,10 +28,7 @@ export class HandlerErrorService {
 
   handleError(error: HttpErrorResponse): Observable<never> {
     this.convertError(error.error);
-    if (this.langCode === 'en') {
-      return throwError(this.langData['en'].ERR_SYSTEM);
-    }
-    return throwError(this.langData['lv'].ERR_SYSTEM);
+    return throwError(() => this.langData[this.langCode]['ERR_SYSTEM']);
   }
 
   handleErrorForkJoin(): Observable<unknown> {
@@ -65,50 +61,30 @@ export class HandlerErrorService {
       if (err) {
         switch (err.status) {
           case 401:
-            if (this.langCode === 'en') {
-              this.alert.error(this.langData['en'].ACCOUNT_WITHOUT_PRIVILEDGE);
-            } else {
-              this.alert.error(this.langData['lv'].ACCOUNT_WITHOUT_PRIVILEDGE);
-            }
+            this.alert.error(this.langData[this.langCode]['ACCOUNT_WITHOUT_PRIVILEDGE']);
             this.doLogout();
             this.router.navigate([this.routerNext]);
             break;
           case 403:
-            if (this.langCode === 'en') {
-              this.alert.warning(this.langData['en'].ACCOUNT_WITHOUT_PRIVILEDGE);
-            } else {
-              this.alert.warning(this.langData['lv'].ACCOUNT_WITHOUT_PRIVILEDGE);
-            }
+            this.alert.warning(this.langData[this.langCode]['ACCOUNT_WITHOUT_PRIVILEDGE']);
             this.doLogout();
             this.router.navigate([this.routerNext]);
             break;
           default:
             if (err.status === 500) {
-              if (this.langCode === 'en') {
-                this.alert.error(err.message ?? this.langData['en'].ERR_SYSTEM);
-              } else {
-                this.alert.error(err.message ?? this.langData['lv'].ERR_SYSTEM);
-              }
+              this.alert.error(err.message ?? this.langData[this.langCode]['ERR_SYSTEM']);
             } else {
               this.alert.error(err.message);
             }
             break;
         }
       } else {
-        if (this.langCode === 'en') {
-          this.alert.warning(this.langData['en'].ERR_CONNECT_SERVER);
-        } else {
-          this.alert.warning(this.langData['lv'].ERR_CONNECT_SERVER);
-        }
+        this.alert.warning(this.langData[this.langCode]['ERR_CONNECT_SERVER']);
         this.doLogout();
         this.router.navigate([this.routerNext]);
       }
     } catch (error) {
-      if (this.langCode === 'en') {
-        this.alert.warning(this.langData['en'].ERR_CONNECT_SERVER);
-      } else {
-        this.alert.warning(this.langData['lv'].ERR_CONNECT_SERVER);
-      }
+      this.alert.warning(this.langData[this.langCode]['ERR_CONNECT_SERVER']);
     }
   }
 

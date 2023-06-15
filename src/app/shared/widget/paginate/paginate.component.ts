@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Paginate } from './paginate.model';
 import { LanguageConstant } from 'src/app/core/constants/language.constant';
 
@@ -7,7 +7,7 @@ import { LanguageConstant } from 'src/app/core/constants/language.constant';
   templateUrl: './paginate.component.html',
   styleUrls: ['./paginate.component.scss']
 })
-export class TablePaginateComponent implements OnInit {
+export class TablePaginateComponent {
   @Input() pageConfig!: Paginate<any>;
   @Output() pageChange: EventEmitter<Paginate<any>> = new EventEmitter<Paginate<any>>();
   // @Output() numOfItemChange: EventEmitter<Paginate<any>> = new EventEmitter<Paginate<any>>();
@@ -15,10 +15,6 @@ export class TablePaginateComponent implements OnInit {
   // LANGUAGE
   langData: Record<string, Record<string, string>> = LanguageConstant;
   langCode = localStorage.getItem('language') ?? 'en';
-
-  ngOnInit(): void { 
-    console.log('page', this.pageConfig)
-  }
 
   setPage(page: number): void {
     if (page > 0 && page <= this.pageConfig.totalPage! && page !== this.pageConfig.currentPage) {

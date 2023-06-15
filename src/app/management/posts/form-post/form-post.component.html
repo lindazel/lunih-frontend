@@ -1,1 +1,205 @@
-<p>form-post works!</p>
+<form [formGroup]="form" (keydown.enter)="$event.preventDefault()" autocomplete="off">
+  <div nz-row>
+    
+    <!-- Column Left -->
+    <div nz-col nzSpan="11">
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_TITLE_EN']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'titleEn')">
+          <textarea nz-input nzAutosize formControlName="titleEn" type="text"></textarea>
+          <app-field-error-display [displayError]="isFieldValid(form, 'titleEn')"
+            [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+          </app-field-error-display>
+        </div>
+      </div>
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_DESCRIPTION_EN']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'descriptionEn')">
+          <textarea nz-input nzAutosize formControlName="descriptionEn" type="text"></textarea>
+          <app-field-error-display [displayError]="isFieldValid(form, 'descriptionEn')"
+            [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+          </app-field-error-display>
+        </div>
+      </div>
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_TYPE']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'postType')">
+          <nz-select class="w-100" nzShowSearch [nzPlaceHolder]="langData[langCode]['CHOOSE_POST_TYPE']" formControlName="postType">
+            <nz-option *ngFor="let postType of listPostType" [nzLabel]="langCode === 'en' ? postType.nameEn : postType.nameLv" [nzValue]="postType.id">
+            </nz-option>
+          </nz-select>
+          <app-field-error-display [displayError]="isFieldValid(form, 'postType')"
+            [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+          </app-field-error-display>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column Middle -->
+    <div nz-col nzSpan="2"></div>
+
+    <!-- Column Right -->
+    <div nz-col nzSpan="11">
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_TITLE_LV']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'titleLv')">
+          <textarea nz-input nzAutosize formControlName="titleLv" type="text"></textarea>
+          <app-field-error-display [displayError]="isFieldValid(form, 'titleLv')"
+            [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+          </app-field-error-display>
+        </div>
+      </div>
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_DESCRIPTION_LV']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'descriptionLv')">
+          <textarea nz-input nzAutosize formControlName="descriptionLv" type="text"></textarea>
+          <app-field-error-display [displayError]="isFieldValid(form, 'descriptionLv')"
+            [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+          </app-field-error-display>
+        </div>
+      </div>
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_NUM_SLOT']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'numSlot')">
+          <input nz-input formControlName="numSlot" type="number">
+          <app-field-error-display [displayError]="isFieldValid(form, 'numSlot')"
+            [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+          </app-field-error-display>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- full col -->
+    <div nz-col nzSpan="24">
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_START_END_DATE']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+        </div>
+        <div nz-col nzSpan="11">
+          <div nz-row>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'startDate')">
+              <nz-date-picker [nzFormat]="'dd/MM/yyyy'" class="w-100" [nzPlaceHolder]="langData[langCode]['POST_START_DATE']" formControlName="startDate">
+              </nz-date-picker>
+              <app-field-error-display [displayError]="isFieldValid(form, 'startDate')"
+                [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+              </app-field-error-display>
+            </div>
+          </div>
+        </div>
+
+        <div nz-col nzSpan="2"></div>
+
+        <div nz-col nzSpan="11">
+          <div nz-row>
+            <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'endDate')">
+              <nz-date-picker [nzFormat]="'dd/MM/yyyy'" class="w-100" [nzPlaceHolder]="langData[langCode]['POST_END_DATE']" formControlName="endDate">
+              </nz-date-picker>
+              <app-field-error-display [displayError]="isFieldValid(form, 'endDate')"
+                [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+              </app-field-error-display>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['INDUSTRY']}}</label><label class="field-required"><sup><i class="fas fa-star-of-life"></i></sup></label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'industryList')">
+          <nz-select class="w-100" nzShowSearch nzServerSearch (nzOnSearch)="searchIndustryValueChanged.next($any($event))" nzMode="multiple" [nzPlaceHolder]="langData[langCode]['CHOOSE_INDUSTRY']" formControlName="industryList">
+            <nz-option *ngFor="let industry of listIndustry.data" [nzLabel]="langCode === 'en' ? industry.nameEn : industry.nameLv" [nzValue]="industry.id">
+            </nz-option>
+          </nz-select>
+          <app-field-error-display [displayError]="isFieldValid(form, 'industryList')"
+            [errorMsg]="langData[langCode]['CAN_NOT_BE_EMPTY']">
+          </app-field-error-display>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- left col -->
+    <div nz-col nzSpan="11">
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_STUDENT_LIST']}}</label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'studentList')">
+          <nz-select class="w-100" nzShowSearch nzServerSearch (nzOnSearch)="searchStudentValueChanged.next($any($event))" nzMode="multiple" [nzPlaceHolder]="langData[langCode]['CHOOSE_STUDENT']" formControlName="studentList">
+            <nz-option *ngFor="let student of listStudent.data" [nzLabel]="student.studentID + '|' + student.firstName + ' ' + student.surName" [nzValue]="student.studentID">
+            </nz-option>
+          </nz-select>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- middle col -->
+    <div nz-col nzSpan="2"></div>
+
+    <!-- right col -->
+    <div nz-col nzSpan="11">
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_QUEUE_LIST']}}</label>
+        </div>
+        <div nz-col nzSpan="24" [ngClass]="displayFieldCss(form, 'queueList')">
+          <nz-select class="w-100" nzShowSearch nzServerSearch (nzOnSearch)="searchStudentValueChanged.next($any($event))" nzMode="multiple" [nzPlaceHolder]="langData[langCode]['CHOOSE_STUDENT']" formControlName="queueList">
+            <nz-option *ngFor="let student of listStudent.data" [nzLabel]="student.studentID + ' | ' + student.firstName + ' ' + student.surName" [nzValue]="student.studentID">
+            </nz-option>
+          </nz-select>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- full col -->    
+    <div nz-col nzSpan="24">
+
+      <div nz-row class="pad-bot-form">
+        <div nz-col nzSpan="24">
+          <label>{{langData[langCode]['POST_DELIVERABLE']}}</label>
+        </div>
+        
+      </div>
+
+      <div nz-row class="ant-modal-footer fk-modal-footer">
+        <div nz-col nzSpan="24" class="ali-right">
+          <div class="pad-left-form-control" style="display: inline-block;">
+            <button nz-button nzType="default" nzSize="default" type="button" class="nz-btn-red" (click)="onCancel()"><i
+                class="fas fa-times mr-right-5"></i>{{langData[langCode]['CANCEL']}}</button>
+          </div>
+          <div class="pad-left-form-control" style="display: inline-block;">
+            <button nz-button nzType="primary" nzSize="default" type="button" (click)="onSubmit()"><i
+                class="fas fa-save mr-right-5"></i>{{langData[langCode]['SAVE']}}</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</form>

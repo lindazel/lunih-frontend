@@ -69,8 +69,6 @@ export const LanguageConstant = {
     FACULTY_NAME_EN: 'Faculty English Name',
     FACULTY_NAME_LV: 'Faculty Latvian Name',
 
-
-
     //Homepage
     SEARCH: 'Search...',
     CATEGORIES: 'Categories', 
@@ -114,6 +112,18 @@ export const LanguageConstant = {
 
     //User_account
 
+
+    //Post
+    POST_TITLE_EN: 'Post title in English',
+    POST_TITLE_LV: 'Post title in Latvian',
+    POST_DESCRIPTION_EN: 'Post description in English',
+    POST_DESCRIPTION_LV: 'Post description in Latvian',
+    POST_NUM_SLOT: 'Number of slots',
+    POST_START_END_DATE: 'Post start & end date',
+    POST_START_DATE: 'Start date',
+    POST_END_DATE: 'End date',
+    POST_STUDENT_LIST: 'Student applied list',
+    POST_QUEUE_LIST: 'Student queue list',
   },
 
   lv: {
