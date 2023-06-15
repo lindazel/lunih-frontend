@@ -112,27 +112,100 @@ export const LanguageConstant = {
   },
 
   lv: {
-    HOMEPAGE: 'Homepage lv',
-    ADMIN_SYSTEM: 'Administration system lv',
+    HOMEPAGE: 'Sākums',
+    ADMIN_SYSTEM: 'Administrācija',
 
     //Button action
-    ADD: 'Add lv',
-    EDIT: 'Edit lv',
-    DELETE: 'Delete lv',
+    ADD: 'Pievienot',
+    EDIT: 'Labot',
+    DELETE: 'Dzēst',
+    CONFIRM: 'Apstiprināt',
+    CANCEL: 'Atcelt',
+    SAVE: 'Saglabāt',
+    //Modal
+    EDIT_TITLE: 'Labot formu ',
+    ADD_TITLE: 'Izveidot formu',
 
     //Error System
     ERR_SYSTEM: 'Something went wrong. lv',
-    ERR_CONNECT_SERVER: 'Unable to connect to server! lv',
-    ACCOUNT_WITHOUT_PRIVILEDGE: 'You do not have access right lv',
+    ERR_CONNECT_SERVER: 'Nav iespējams sazināties ar serveri!',
+    ACCOUNT_WITHOUT_PRIVILEDGE: 'Jums nav piekļuves tiesības!',
+    MSG_UPDATE_DONE: 'Informācija atjaunota!',
+    MSG_CREATE_DONE: 'Veiksmīgi izveidots!',
+    MSG_CHANGE_DONE: 'Informācija atjaunota!',
+    CONFIRM_DELETE: 'Vai tiešām vēlies dzēst šo ierakstu?',
+    CONFIRM_CHANGE_STATUS: 'Vai tiešām vēlies mainīt statusu šim ierakstam?',
+    CAN_NOT_BE_EMPTY:'Šī sadaļa nevar būt tukša!',
 
     //Authentication
-    USER_INFO: 'User Information lv',
-    LOG_IN: 'Log In lv',
-    LOG_OUT: 'Izlogoties',
+    USER_INFO: 'Lietotāja informācija',
+    LOG_IN: 'Pierakstīties',
+    LOG_OUT: 'Izrakstīties',
+    USER_NAME: 'Lietotājvārds',
+    USER_NAME_TIP: 'Lietotājvārds/E-pasts',
+    USER_NAME_ERR: 'Lietotājvārds nevar būt tukšs!',
+    PASSWORD: 'Parole',
+    PASSWORD_TIP: 'Tava parole',
+    PASSWORD_ERR: 'Parole nevar būt tukša',
+    REMEMBER_ME: 'Atcerēties mani',
+    FORGOR: 'Aizmirsi paroli?',
+    LOG_IN_GOOGLE: 'Log In with Google',
+    SIGN_UP: 'Reģistrēties',
+    OR: 'Vai',
+    NO: 'Nē',
+    STATUS: 'Statuss',
+    ACTIVE: 'Aktīvs',
+    INACTIVE: 'Neaktīvs',
+     //Paginate
+     NUMBER_LIST: 'Dalībnieku skaits',
+     PAGE: 'lapa',
+     TOTAL: 'Kopā',
+     ITEM: 'dalībnieks(i)',
 
     //Faculty
-    FACULTY_NAME: 'Faculty Name LV',
-    FACULTY_NAME_EN: 'Faculty English Name LV',
-    FACULTY_NAME_LV: 'Faculty Latvian Name LV',
+    FACULTY_NAME: 'Fakultātes nosaukums',
+    FACULTY_NAME_EN: 'Fakultātes nosaukums EN',
+    FACULTY_NAME_LV: 'Fakultātes nosaukums LV',
+    //Homepage
+    SEARCH: 'Meklē...',
+    CATEGORIES: 'Kategorijas', 
+    ANNOUNCEMENT: 'Paziņojums',
+    THESIS_TOPIC: 'Ideju tēmas',
+    JOB_TOPIC: 'Darba piedāvājumi',
+    
+    MORE: 'Apskatīt vēl',
+
+    CONTACT_US: 'Sazināties ar mums',
+    ABOUT_US: 'Par mums',
+
+    //Header
+    STUDENT: 'Students',
+    UNIVERSITY: 'Universitāte',
+    COMPANY: 'Kompānija',
+    ADMIN: 'Administrators',
+
+    //Footer
+    INFO_1: 'Liepājas Universitātes ideju banka',
+    INFO_2: 'Ideju tēmas | Darba piedāvājums',
+    INFO_3: 'Izstrādes stadijā',
+
+    ADDRESS_1: 'Address line 1',
+    ADDRESS_2: 'Address line 2',
+    ADDRESS_3: 'Address line 3',
+
+    PHONE_NUM: '(+371) 2345 6789',
+    EMAIL: 'contact@lunih.lv',
+    DESIGN_COST: 'Developed by lunih - Liepaja University',
+
+    //Categories
+    DASHBOARD: 'Dashboard',
+    FACULTY: 'Fakultāte',
+    PROGRAM: 'Programma',
+    INDUSTRY: 'Industrija',
+    POST_TYPE: 'Publikācijas veds',
+    USER_ACCOUNT: 'Lietotājs & Konts',
+    POST_MANAGEMENT: 'Publikācijas menedžments',
+    POST: 'Publikācija',
+
   }
 };
